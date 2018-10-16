@@ -17,9 +17,8 @@ class BodyPart(models.Model):
 
 class PainEffect(models.Model):
     PAIN_TYPES = (
-        ('S', 'Small'),
-        ('M', 'Medium'),
-        ('L', 'Large'),
+        ('P', 'Pain'),
+        ('I', "Infections"),
     )
     level = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     location = models.ForeignKey(BodyPart, on_delete=models.CASCADE)

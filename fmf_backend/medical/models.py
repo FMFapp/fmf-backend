@@ -10,9 +10,14 @@ class Medication(models.Model):
     """
 
     """
-    sideEffects = models.ManyToManyField(bio.PainEffect)
+    MEDICATION_TYPES = (
+            ("P", "Pills"),
+            ("I", "Injection"),
+            )
+    sideEffects = models.ManyToManyField(bio.PainEffect)  # todo add better way to do this
     name = models.CharField(max_length=40)
     manufacturure = models.CharField(max_length=40)
+
 
     def __str__(self):
         return "Medication({_id}) name: {name}".format(**{
