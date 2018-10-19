@@ -59,8 +59,13 @@ class User(models.Model):
 
 
 class MdeicationUse(models.Model):
+    profile = models.ForeingKey(Profile, on_delete=models.CASCADE)
     time_taken = models.DateTimeField()
     medication = models.ForeignKey(med.Medication, on_delete=models.CASCADE)
     amount = models.IntegerField()
     place_taken = models.ForeignKey(fas.Facility, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return f"profile {profile.nikname if profile.nikname else 'Unknown'} took {amount if amount else 'Unknown'} of {medication.name if medication.name else 'Unknown'} in {time_taken if time_taken else 'Unkwon'}"
+
 
