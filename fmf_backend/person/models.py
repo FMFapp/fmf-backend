@@ -1,5 +1,5 @@
 """
-fmf-backend/fmf_backend/person
+fmf-backend/fmf_backend/person/models.py
 
 TODO:
      * prespriction end date requiered if isActive == False
@@ -28,8 +28,12 @@ class Profile(models.Model):
     seizureFrequency = models.IntegerField() # per year
     hmo = models.CharField(max_length=1, null=True)
 
-    def __str__():
-        return "{0}".format(nikname)
+    def __str__(self):
+        return "Mutation({_id}) name {name}".format(**{
+             "_id": self.id if self.id else "Unknown",
+             "name": self.name if self.name else "Unknown",
+
+             })
 
 
 class Perscripton(models.Model):
