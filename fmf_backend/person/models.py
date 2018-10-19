@@ -35,7 +35,7 @@ class Profile(models.Model):
              })
 
 
-class Perscripton(models.Model):
+class Prescription(models.Model):
     medication = models.ForeignKey(med.Medication(), on_delete=models.CASCADE)
     frequency = models.IntegerField()
     amount = models.IntegerField()
