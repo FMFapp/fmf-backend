@@ -2,8 +2,8 @@
 fmf-backend/fmf_backend/person/models.py
 
 TODO:
-     * add option to record medications side effects
      * add times in mounth that the user forgat to take his / her pills
+     * add option to record medications side effects
 
 """
 
@@ -12,7 +12,7 @@ from biological import models as bio
 from medical import models as med
 import datetime
 
-# Create your models here.
+
 class Profile(models.Model):
     HMOs = (
             ("C", "Clalit"),
@@ -56,3 +56,6 @@ class Prescription(models.Model):
 class User(models.Model):
     pass
 
+
+class MdeicationUse(models.Model):
+    pass

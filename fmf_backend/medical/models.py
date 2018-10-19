@@ -22,7 +22,7 @@ class Medication(models.Model):
     def __str__(self):
         return "Medication({_id}) name: {name}".format(**{
             "_id": self.id if self.id else "Unknown",
-            "name": self.name
+            "name": self.name if self.name else "Unkown"
             })
 
 
@@ -35,7 +35,7 @@ class Mutations(models.Model):
     def __str__(self):
         return "Mutation({_id}) name {name}".format(**{
             "_id": self.id if self.id else "Unknown",
-            "name": self.name
+            "name": self.name if self.name else "Unkown"
             })
 
 
