@@ -28,7 +28,7 @@ class PainEffect(models.Model):
     def __str__(self):
         return "Pain({_id}) level {level} at location".format(**{
             "_id": self.id if self.id else "Unknown",
-            "level": self.level,
-            "location": self.location.name
+            "level": self.level if self.level else "Unknown",
+            "location": self.location.name if self.location.name else "Unknown",
             })
 
