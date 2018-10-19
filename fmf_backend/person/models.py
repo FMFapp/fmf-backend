@@ -2,7 +2,6 @@
 fmf-backend/fmf_backend/person/models.py
 
 TODO:
-     * prespriction end date requiered if isActive == False
      * add option to record medications side effects
      * add times in mounth that the user forgat to take his / her pills
 
@@ -41,8 +40,8 @@ class Prescription(models.Model):
     amount = models.IntegerField()
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     isActive = models.BooleanField(default=True)
-    startDate = models.DateTimeField(default=datetime.datetime.fromtimestamp(1))  # time started to take the prespriction, NOT the creation of the instance
-    endDate = models.DateTimeField(null=True)  # todo fixme
+    startDate = models.DateTimeField(default=datetime.datetime.fromtimestamp(2))  # time started to take the prespriction, NOT the creation of the instance
+    endDate = models.DateTimeField(default=datetime.datetime.fromtimestamp(1))  # todo fixme
 
     def __str__(self):
         return "{isActive} Prescription({_id}): medication {med} frequency {freq} assinged to profile {prof}".format(**{
