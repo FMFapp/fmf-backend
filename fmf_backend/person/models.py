@@ -58,4 +58,8 @@ class User(models.Model):
 
 
 class MdeicationUse(models.Model):
-    pass
+    time_taken = models.DateTimeField()
+    # medication = models.ForeignField(med.medicaion, on_delete=models.CASCADE)
+    amount = models.IntegerField()
+
+
