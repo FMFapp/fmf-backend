@@ -50,7 +50,7 @@ class Prescription(models.Model):
             "med": self.medication.name if self.medication.name else "Unknown",
             "freq": self.frequency if self.frequency else "Unknown",
             "prof": self.profile.nikname if self.profile.nikname else "Unknown",
-            "isActive" = self.isActive
+            "isActive": self.isActive
             })
 
 
