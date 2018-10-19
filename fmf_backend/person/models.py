@@ -10,6 +10,7 @@ TODO:
 from django.db import models
 from biological import models as bio
 from medical import models as med
+from facilities import models as fas
 import datetime
 
 
@@ -59,7 +60,7 @@ class User(models.Model):
 
 class MdeicationUse(models.Model):
     time_taken = models.DateTimeField()
-    # medication = models.ForeignField(med.medicaion, on_delete=models.CASCADE)
+    medication = models.ForeignKey(med.Medication, on_delete=models.CASCADE)
     amount = models.IntegerField()
-
+    place_taken = models.ForeignKey(fas.Facility, on_delete=models.CASCADE, null=True)
 

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'biological.apps.BiologicalConfig',
     'medical.apps.MedicalConfig',
     'person.apps.PersonConfig',
+    'facilities.apps.FacilitiesConfig',
 ]
 
 MIDDLEWARE = [
