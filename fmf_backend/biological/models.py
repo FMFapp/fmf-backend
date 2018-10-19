@@ -11,7 +11,8 @@ class BodyPart(models.Model):
     def __str__(self):
         return "BodyPart({_id}) name: {name}".format(**{
             "_id": self.id if self.id else "Unknone",
-            "name": self.name
+            "name": self.name if self.name else "Unkown"
+
             })
 
 
