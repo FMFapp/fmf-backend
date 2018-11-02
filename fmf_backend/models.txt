@@ -1,0 +1,13 @@
+ == person ==
+/login
+/signup
+/profile
+
+ == biological ==
+/bodyParts
+/painEffects
+
+ == medical ==
+/medications
+/mutations
+/seizure

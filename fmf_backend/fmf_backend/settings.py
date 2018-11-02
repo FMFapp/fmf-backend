@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'biological.apps.BiologicalConfig',
+    'medical.apps.MedicalConfig',
+    'person.apps.PersonConfig',
+    'facilities.apps.FacilitiesConfig',
 ]
 
 MIDDLEWARE = [
