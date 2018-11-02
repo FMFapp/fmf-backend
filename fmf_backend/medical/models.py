@@ -26,7 +26,7 @@ class Medication(models.Model):
             })
 
 
-class Mutations(models.Model):
+class Mutation(models.Model):
     """
     The specific mutation that the profile have.
     """
