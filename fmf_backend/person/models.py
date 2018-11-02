@@ -22,16 +22,16 @@ class Profile(models.Model):
             ("T", "meuhedet"),  # todo think about something
             )
     nikname = models.CharField(max_length=30)
-    birthday = models.DateTimeField()
-    diagnosisDate = models.DateTimeField()
+    birthday = models.DateField()
+    diagnosisDate = models.DateField()
     originID = models.IntegerField()
     seizureFrequency = models.IntegerField() # per year
     hmo = models.CharField(max_length=1, null=True)
 
     def __str__(self):
-        return "Mutation({_id}) name {name}".format(**{
+        return "Profile({_id}) name {name}".format(**{
              "_id": self.id if self.id else "Unknown",
-             "name": self.name if self.name else "Unknown",
+             "name": self.nickname if self.nickname else "Unknown",
              })
 
 
@@ -59,7 +59,7 @@ class User(models.Model):
 
 
 class MdeicationUse(models.Model):
-    profile = models.ForeingKey(Profile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     time_taken = models.DateTimeField()
     medication = models.ForeignKey(med.Medication, on_delete=models.CASCADE)
     amount = models.IntegerField()

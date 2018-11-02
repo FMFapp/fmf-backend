@@ -1,9 +1,14 @@
+"""
+/fmf-backend/fmf_backend/person/views.py
+"""
 from django.shortcuts import render
 from person.models import Profile, User, Prescription
+from rest_framework import viewsets
 
-# Create your views here.
-class UserController(View):
+
+class UserController(viewsets.ModelViewSet):
     def get(self, request):
+        # queryset =
         return
 
     def post(self, request):
@@ -15,6 +20,7 @@ class UserController(View):
 
 class ProfileController(View):
     def get(self, request):
+        queryset =
         return
 
     def post(self, request):
