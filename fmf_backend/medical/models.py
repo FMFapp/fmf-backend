@@ -63,10 +63,11 @@ class Changes(models.Model):
     EndDate = models.DateTimeField(auto_now=True)
     note = models.CharField(max_length = 300, blank=True)
     sizure = models.ForeignKey(Seizure, on_delete=models.CASCADE, null=True)
-    medications = models.ForeignKey(person.MedicationUse, on_delete=models.CASCADE, null=True)
-
+    medications = models.ForeignKey(person.MedicationUse, on_delete=models.CASCADE, null=True, blank=True)
+    """
     def __str__(self):
-        return "Change({_id}) pain: {pain}".replace(**{
+        return "Change({_id}) pain: pain".replace(**{
             "_id": self.id if self.id else "Unknown",
             "pain": self.pain if self.pain else "Unknown"
             })
+    """

@@ -13,7 +13,7 @@ from biological import models as bio
 from facilities import models as fas
 import datetime
 
-
+# #
 class Profile(models.Model):
     HMOs = (
             ("C", "Clalit"),
@@ -50,7 +50,7 @@ class Prescription(models.Model):
     endDate = models.DateField(default=datetime.datetime.fromtimestamp(1))  # todo fixme
 
     def __str__(self):
-        return "{isActive} Prescription({_id}): medication {med} frequency {freq} assinged to profile {prof}".format(**{
+        return "{isActive} Prescription({_id}): medication med frequency {freq} assinged to profile {prof}".format(**{
             "_id": self.id if self.id else "Unknown",
             # "med": self.medication.name if self.medication.name else "Unknown",
             "freq": self.frequency if self.frequency else "Unknown",
@@ -64,12 +64,12 @@ class User(models.Model):
 
 
 class MedicationUse(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    # profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     time_taken = models.DateTimeField(null=True)
     # medication = models.ForeignKey(medical.models.Medication, on_delete=models.CASCADE)
-    amount = models.IntegerField()
-    place_taken = models.ForeignKey(fas.Facility, on_delete=models.CASCADE, null=True)
+    prespriction = models.ForeignKey(Prescription, on_delete=models.CASCADE, null=True)
+    place_taken = models.ForeignKey(fas.Facility, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
-        return f"profile {profile.nikname if profile.nikname else 'Unknown'} took {amount if amount else 'Unknown'} of {medication.name if medication.name else 'Unknown'} in {time_taken if time_taken else 'Unkwon'}"
+        return f"profile {self.prespriction.profile.nikname if self.prespriction.profile.nikname else 'Unknown'} took {self.prespriction.amount if self.prespriction.amount else 'Unknown'} of medication.name if medication.name else 'Unknown' in {self.time_taken if self.time_taken else 'Unkwon'}"
 
 
