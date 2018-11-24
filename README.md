@@ -43,8 +43,9 @@ Please [contact the maintainer](https://t.me/d4rk_0lympus) on [Telegram](https:/
 
 ## Authors
 
-* **Itay Saadia** - *Initial work* - [itaysaadia](https://github.com/itaysaadia)
+* **Itay Saadia** - *Initial Work* - [itaysaadia](https://github.com/itaysaadia)
 * **Dr. Eitan Giat** - *Medical Consulting* [Tel Hashomer Hospital](https://www.sheba.co.il/%D7%93%D7%A8_%D7%90%D7%99%D7%AA%D7%9F_%D7%92%D7%99%D7%90%D7%AA)
+* **Meitar Reihan** - *Backend Developer* - [MeitarR](https://github.com/MeitarR)
 
 See also the list of [contributors](https://github.com/FMFapp/fmf-backend/blob/readme/CONTRIBUTORS) who participated in this project.
 
