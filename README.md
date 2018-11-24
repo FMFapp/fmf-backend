@@ -19,72 +19,36 @@ python -m pip install -r  requirements.txt
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
+First, you sould download the source code from github.
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+git clone https://github.com/FMFapp/fmf-backend.git 
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+To test the server run this commands:
 ```
-Give an example
+cd fmf-backend/fmf_backend/
+python manage.py runserver
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Python3](https://www.python.org/) - The programming language used
+* [Django](https://www.djangoproject.com/) - The Web Framework
+* [Django Rest Framework](https://www.django-rest-framework.org/) - Used to generate RSS Feeds
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please [contact the maintainer](https://t.me/d4rk_0lympus) on [Telegram](https://telegram.org/).
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Itay Saadia** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Dr. Eitan Giat** - *Medical Consulting* [Tel Hashomer Hospital](https://www.sheba.co.il/%D7%93%D7%A8_%D7%90%D7%99%D7%AA%D7%9F_%D7%92%D7%99%D7%90%D7%AA)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
-
 
