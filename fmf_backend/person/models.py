@@ -9,11 +9,11 @@ TODO:
 
 from django.db import models
 from biological import models as bio
-# import medical
+from medical import models as med
 from facilities import models as fas
 import datetime
 
-# #
+
 class Profile(models.Model):
     HMOs = (
             ("C", "Clalit"),
@@ -41,7 +41,7 @@ class Profile(models.Model):
 
 class Prescription(models.Model):
     # time_taken = models.DateTimeField()
-    # medication = models.ForeignKey(medical.models.Medication, on_delete=models.CASCADE)
+    medication = models.ForeignKey(med.Medication, on_delete=models.CASCADE)
     frequency = models.IntegerField()
     amount = models.IntegerField()
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
@@ -71,5 +71,4 @@ class MedicationUse(models.Model):
     place_taken = models.ForeignKey(fas.Facility, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
         return f"profile {self.prespriction.profile.nikname if self.prespriction.profile.nikname else 'Unknown'} took {self.prespriction.amount if self.prespriction.amount else 'Unknown'} of medication.name if medication.name else 'Unknown' in {self.time_taken if self.time_taken else 'Unkwon'}"
-
 
