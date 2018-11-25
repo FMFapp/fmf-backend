@@ -71,3 +71,4 @@ class Changes(models.Model):
             "pain": self.pain if self.pain else "Unknown"
             })
     """
+
