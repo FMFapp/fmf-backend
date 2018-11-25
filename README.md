@@ -28,6 +28,7 @@ To test the server run this commands:
 ```
 cd fmf-backend/fmf_backend/
 python manage.py makemigrations
+python manage.py migrate
 python manage.py runserver
 ```
 
