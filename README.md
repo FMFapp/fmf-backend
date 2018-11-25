@@ -1,7 +1,7 @@
 # FMF-App Backend
 
 This is the back-end side of the FMF-App application. 
-FMF-App is a mobile and web application which was targeted to help to pations, doctors and researchers of the Familial Mediterranean fever.
+FMF-App is a mobile and web application which was targeted to help patients, doctors and researchers of the Familial Mediterranean fever.
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 To run this server on your machine you need to download the requirements from the requirements.txt file. 
-is is recommended to use venv insead of your regular interpreter and use the latest version of Python 3.
+It is recommended to use venv instead of your regular interpreter and use the latest version of Python 3.
 ```
 python -m pip install -r  requirements.txt
 ```
@@ -19,7 +19,7 @@ python -m pip install -r  requirements.txt
 
 A step by step series of examples that tell you how to get a development env running
 
-First, you sould download the source code from github.
+First, you should download the source code from github.
 ```
 git clone https://github.com/FMFapp/fmf-backend.git 
 ```
@@ -27,6 +27,7 @@ git clone https://github.com/FMFapp/fmf-backend.git
 To test the server run this commands:
 ```
 cd fmf-backend/fmf_backend/
+python manage.py makemigrations
 python manage.py runserver
 ```
 
