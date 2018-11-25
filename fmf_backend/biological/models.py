@@ -3,6 +3,7 @@ fmf-backend/fmf_backend/biological/models.py
 """
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from biological import models as bio
 
 # Create your models here.
 class BodyPart(models.Model):
@@ -20,15 +21,22 @@ class PainEffect(models.Model):
     PAIN_TYPES = (
         ('P', 'Pain'),
         ('I', "Infections"),
+        ('D', 'Diarrhea'),
+        ('N', 'Nausea'),
+        ('V', 'Vomiting'),
+        ('C', 'Consipation'),
+        ('O', 'Other')
     )
-    level = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
-    location = models.ForeignKey(BodyPart, on_delete=models.CASCADE)
-    painType = models.CharField(max_length=8, choices=PAIN_TYPES)
+    PAIN_CHARACTERIZATION = (
+            ('D', 'Dull'),
+            ('S', 'Sharp'),
+            ('B', 'Burning'),
+            ('P', 'Pulling'),
+            )
+    painType = models.CharField(max_length=8, choices=PAIN_TYPES, blank=True)
+    painCharacterization = models.CharField(max_length=8, choices=PAIN_CHARACTERIZATION , blank=True)
+    level = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)],blank=True, null=True)
+    location = models.ForeignKey(bio.BodyPart, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
-        return "Pain({_id}) level {level} at location".format(**{
-            "_id": self.id if self.id else "Unknown",
-            "level": self.level if self.level else "Unknown",
-            "location": self.location.name if self.location.name else "Unknown",
-            })
-
+        return f"Pain({self.id if self.id else 'Unkown'}) type {self.painType if self.painType else 'Unknown'} at location"
