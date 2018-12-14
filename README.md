@@ -35,7 +35,7 @@ python manage.py runserver
 
 * [Python3](https://www.python.org/) - The programming language used
 * [Django](https://www.djangoproject.com/) - The Web Framework
-* [Django Rest Framework](https://www.django-rest-framework.org/) - Used to generate RSS Feeds
+* [Django Rest Framework](https://www.django-rest-framework.org/) - Used to generate the RestAPI
 
 ## Contributing
 
